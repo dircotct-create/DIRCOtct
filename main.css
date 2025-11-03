@@ -1,0 +1,852 @@
+/* Variables de Colores */
+:root {
+    --primary-blue-dark: #00004d; /* Azul muy oscuro, casi negro, para fondo principal como en la imagen */
+    --primary-blue: #000080; /* Azul oscuro para secciones */
+    --accent-orange: #FF8C00; /* Naranja vibrante para botones y acentos */
+    --accent-orange-dark: #CC7000; /* Naranja más oscuro para hover */
+    --light-background: #f8f8f8; /* Fondo muy claro para secciones de contenido */
+    --text-dark: #333;
+    --text-light: #ffffff; /* Texto blanco para fondos oscuros */
+    --card-background: #ffffff; /* Fondo de tarjetas blanco */
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos Generales y Reseteo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--light-background); /* Fondo general claro */
+    scroll-behavior: smooth; /* Para el scroll suave */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.8em;
+    color: var(--primary-blue); /* Títulos en azul oscuro */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--accent-orange);
+    color: var(--text-light);
+    box-shadow: 0 4px 15px var(--accent-orange-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-orange-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--accent-orange-dark);
+}
+
+/* Header y Navegación Sticky */
+.header {
+    background-color: var(--card-background); /* Header blanco como en la imagen */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta el tamaño del logo */
+    border-radius: 8px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--text-dark); /* Enlaces de navegación en color oscuro */
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--accent-orange); /* Subrayado naranja */
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: var(--accent-orange);
+}
+
+.nav-list a:hover::after,
+.nav-list a.active::after {
+    width: 100%;
+}
+
+/* Menú Hamburguesa (Mobile) */
+.hamburger-menu {
+    display: none; /* Oculto por defecto en desktop */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--primary-blue); /* Color del botón hamburguesa */
+}
+
+.hamburger-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Sección Hero */
+.hero-section {
+    background: var(--primary-blue-dark); /* Fondo azul oscuro como en la imagen */
+    color: var(--text-light);
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Para contener el lottie y las nubes */
+}
+
+/* Efecto de Nubes y Estrellas */
+.hero-section::before,
+.hero-section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(15px); /* Suaviza los bordes de la nube */
+    opacity: 0.9; /* Nubes más opacas */
+    z-index: 0; /* Asegura que las nubes estén detrás del contenido */
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%); /* Color de nube blanco */
+}
+
+.hero-section::before {
+    width: 550px; /* Tamaño de la nube izquierda */
+    height: 300px;
+    bottom: -100px;
+    left: -150px;
+    animation: moveClouds 20s infinite linear alternate;
+}
+
+.hero-section::after {
+    width: 650px; /* Tamaño de la nube derecha */
+    height: 350px;
+    bottom: -120px;
+    right: -200px;
+    animation: moveClouds 25s infinite linear reverse;
+}
+
+@keyframes moveClouds {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+
+/* Estrellas (pequeños puntos blancos) */
+.hero-section::before, .hero-section::after {
+    /* ... (propiedades de nubes existentes) ... */
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.1), /* Sombra ligera para las nubes */
+                150px 80px 0 0 rgba(255, 255, 255, 0.05), /* Estrellas simuladas */
+                -200px 120px 0 0 rgba(255, 255, 255, 0.08),
+                300px -50px 0 0 rgba(255, 255, 255, 0.06),
+                -100px -100px 0 0 rgba(255, 255, 255, 0.04);
+}
+
+
+.hero-content {
+    display: flex; /* Habilita Flexbox */
+    flex-direction: row; /* Elementos en fila */
+    align-items: center; /* Centra verticalmente */
+    justify-content: space-between; /* Espacio entre el texto y el cohete */
+    gap: 40px;
+    z-index: 1; /* Asegura que el contenido esté por encima de las nubes */
+    width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+    max-width: 1000px; /* Limita el ancho máximo para mejor lectura */
+    text-align: left; /* Alinea el texto a la izquierda dentro de su contenedor */
+}
+
+.hero-text {
+    flex: 1; /* Permite que el texto ocupe el espacio disponible */
+    min-width: 300px; /* Asegura que no se encoja demasiado */
+}
+
+.hero-text h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-light); /* Título blanco */
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    color: var(--text-light); /* Párrafo blanco */
+    text-align: justify; /* Justifica el texto para mejor legibilidad */
+}
+
+.hero-lottie {
+    flex-shrink: 0; /* Evita que el lottie se encoja */
+    width: 100%;
+    max-width: 500px; /* Tamaño máximo del lottie */
+    margin-top: 0; /* Elimina el margen superior que tenía */
+    display: flex; /* Para centrar el lottie si es necesario */
+    justify-content: center; /* Centra el lottie horizontalmente */
+    align-items: center; /* Centra el lottie verticalmente */
+}
+
+/* Sección de Servicios */
+.services-section {
+    background-color: var(--light-background); /* Fondo claro */
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: var(--card-background); /* Fondo de tarjeta blanco */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 3em;
+    color: var(--accent-orange); /* Iconos en naranja */
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    color: var(--primary-blue); /* Títulos de tarjeta en azul oscuro */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.service-card p {
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+/* Nueva Sección: Clientes */
+.clients-section {
+    background-color: var(--primary-blue-dark); /* Fondo azul oscuro como en la sección hero */
+    color: var(--text-light);
+    text-align: center;
+}
+
+.clients-section .section-title {
+    color: var(--text-light); /* Título blanco */
+}
+
+.clients-section .section-subtitle {
+    color: var(--text-light); /* Subtítulo blanco */
+}
+
+.logo-carousel-container {
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    
+}
+
+.logo-carousel {
+    display: flex;
+    width: fit-content; /* Permite que el contenido se extienda más allá del contenedor */
+    animation: scroll-logos 30s linear infinite; /* Animación de scroll infinito */
+}
+
+.logo-carousel img {
+    height: 80px; /* Altura fija para los logos */
+    margin: 0 40px; /* Espacio entre logos */
+    filter: grayscale(100%) brightness(150%); /* Logos en escala de grises y más brillantes para el fondo oscuro */
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logo-carousel img:hover {
+    filter: grayscale(0%) brightness(100%); /* Color al pasar el ratón */
+    opacity: 1;
+}
+
+@keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Se desplaza el 50% del ancho para el loop infinito */
+}
+
+/* Sección Quiénes Somos */
+.about-section {
+    background-color: var(--card-background); /* Fondo blanco */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--shadow-light);
+}
+
+.about-text {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.about-text .section-title {
+    text-align: left;
+    font-size: 2.5em;
+    color: var(--primary-blue); /* Título en azul oscuro */
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.about-text ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: var(--text-dark);
+}
+
+.about-text ul li i {
+    color: var(--accent-orange); /* Iconos de lista en naranja */
+    margin-right: 10px;
+}
+
+/* Sección de Testimonios */
+.testimonials-section {
+    background-color: var(--light-background); /* Fondo claro */
+    text-align: center;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--card-background); /* Fondo de tarjeta blanco */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    font-size: 1.1em;
+}
+
+.testimonial-card .author {
+    font-weight: 600;
+    color: var(--primary-blue); /* Autor en azul oscuro */
+    font-size: 1em;
+}
+
+/* Sección de Contacto */
+.contact-section {
+    background-color: var(--primary-blue-dark); /* Fondo azul oscuro como en la imagen */
+    color: var(--text-light); /* Texto de contacto blanco */
+}
+
+.contact-content {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-info .section-title {
+    text-align: left;
+    font-size: 2.5em;
+    color: var(--text-light); /* Título de contacto blanco */
+}
+
+.contact-info p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.info-item i {
+    color: var(--accent-orange); /* Iconos de info en naranja */
+    margin-right: 15px;
+    font-size: 1.3em;
+}
+
+.social-links {
+    margin-top: 30px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent-orange); /* Iconos sociales en naranja */
+    color: var(--text-light);
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-links a:hover {
+    background-color: var(--accent-orange-dark);
+    transform: translateY(-3px);
+}
+
+.contact-form {
+    background-color: var(--card-background); /* Fondo del formulario blanco */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--text-dark); /* Texto de input oscuro */
+    background-color: var(--light-background); /* Fondo de input claro */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-orange);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.2);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-primary {
+    align-self: flex-start;
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: var(--primary-blue); /* Pie de página en azul oscuro */
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+/* Botón Flotante de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-orange); /* Botón WhatsApp en naranja */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 6px 20px var(--shadow-dark);
+    z-index: 1001;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: var(--accent-orange-dark); /* Naranja más oscuro en hover */
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px var(--shadow-dark);
+}
+
+.whatsapp-button i {
+    font-size: 1.5em;
+}
+
+/* Animaciones al Scroll (CSS) */
+/* Clases base para animaciones */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tipos de animación */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+.fade-in.is-visible {
+    opacity: 1;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-left.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-right.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Retrasos para animaciones escalonadas */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2em;
+    }
+
+    .hero-content {
+        flex-direction: column; /* Apila el texto y el cohete en pantallas más pequeñas */
+        text-align: center;
+    }
+
+    .hero-text {
+        order: 2; /* Pone el texto después del cohete en móvil si se desea, o 1 para antes */
+    }
+
+    .hero-lottie {
+        order: 1; /* Pone el cohete primero en móvil */
+        margin-bottom: 30px; /* Espacio entre el cohete y el texto */
+    }
+
+    .hero-text h1 {
+        font-size: 2.8em;
+        text-align: center;
+    }
+
+    .hero-text p {
+        font-size: 1.1em;
+    }
+
+    .hero-lottie dotlottie-player {
+        width: 400px !important;
+        height: 350px !important;
+    }
+
+    .about-content, .contact-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text .section-title, .contact-info .section-title {
+        text-align: center;
+    }
+
+    .about-image, .contact-info, .contact-form-container {
+        width: 100%;
+        max-width: 600px; /* Limita el ancho en pantallas medianas */
+        margin: 0 auto;
+    }
+
+    .contact-info .info-item {
+        justify-content: center;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .contact-form .btn-primary {
+        align-self: center;
+    }
+
+    /* Carrusel de logos en móvil */
+    .logo-carousel img {
+        height: 60px; /* Logos más pequeños en móvil */
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Oculta la lista de navegación por defecto */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--card-background); /* Fondo del menú hamburguesa */
+        position: absolute;
+        top: 80px; /* Ajusta según la altura del header */
+        left: 0;
+        box-shadow: 0 5px 15px var(--shadow-light);
+        padding: 20px 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-list.active {
+        display: flex; /* Muestra la lista cuando el menú está activo */
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .nav-list a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1em;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Muestra el menú hamburguesa */
+    }
+
+    .hero-section {
+        padding: 80px 0;
+        min-height: 70vh;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-text p {
+        font-size: 1em;
+    }
+
+    .hero-lottie dotlottie-player {
+        width: 300px !important;
+        height: 250px !important;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .whatsapp-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .hero-text p {
+        font-size: 0.9em;
+    }
+
+    .hero-lottie dotlottie-player {
+        width: 250px !important;
+        height: 200px !important;
+    }
+
+    .service-card, .testimonial-card {
+        padding: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.5em;
+    }
+
+    .whatsapp-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        gap: 8px;
+    }
+
+    .whatsapp-button i {
+        font-size: 1.2em;
+    }
+}
+/* Remueve el subrayado de los enlaces en las tarjetas de servicio */
+.services-grid .service-card {
+    text-decoration: none;
+    /* Asegúrate de que el color del texto sea legible, ya que la raya ya no estará */
+    color: inherit; 
+    /* Opcional: añade una transición para el efecto hover si lo deseas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* Opcional: Añade un efecto visual cuando el usuario pasa el cursor por encima */
+.services-grid .service-card:hover {
+    transform: translateY(-5px); /* Pequeño desplazamiento hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra para destacarlo */
+}

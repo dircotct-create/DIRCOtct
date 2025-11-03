@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIRCOTCT - Soluciones Integrales</title>
+    <link rel="icon" type="image/x-icon" href="/IMG/icono.png">
+    <link rel="stylesheet" href="main.css">
+    <!-- Google Fonts: Inter para tipografía legible -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573202641496" class="whatsapp-button" target="_blank" aria-label="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+    </a>
+
+    <!-- Cabecera y Navegación Sticky -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="IMG/LOGO.png" alt="Logo DIRCOTCT">
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link">Inicio</a></li>
+                    <li><a href="#services" class="nav-link">Servicios</a></li>
+                    <li><a href="#clients" class="nav-link">Clientes</a></li> <!-- Nuevo enlace de navegación -->
+                    <li><a href="#about" class="nav-link">Nosotros</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonios</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="hamburger-menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero (Cobertura Inicial) -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text animate-on-scroll fade-in-up">
+                    <h1>Impulsa tu Negocio al Siguiente Nivel</h1>
+                    <p>En DIRCO, somos tu aliado en la revolución digital. Especialistas en creación de sitios web,
+                        gestión de redes sociales, landing pages y tiendas online. Desde un logotipo memorable hasta una
+                        estrategia de SEO completa, te ayudamos a destacar y crecer. ¡Únete a nosotros y juntos, creemos
+                        algo extraordinario!</p>
+                    <a href="#services" class="btn btn-primary scroll-to-section">Descubre Nuestros Servicios</a>
+                </div>
+                <div class="hero-lottie animate-on-scroll fade-in-up delay-1">
+                    <!-- Lottie Player para el cohete -->
+                    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                        type="module"></script>
+                    <dotlottie-player src="https://lottie.host/012d0a9e-cdef-4127-a0fd-db40de4aae6b/a7PMjjJKZ3.json"
+                        background="transparent" speed="1" style="width: 500px; height: 450px;" loop autoplay>
+                    </dotlottie-player>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+       <section id="services" class="services-section section-padding">
+    <div class="container">
+        <h2 class="section-title animate-on-scroll fade-in-up">Nuestros Servicios</h2>
+        <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Queremos ser tu aliado en el ámbito del
+            marketing digital.</p>
+        <div class="services-grid">
+            
+            <!-- Tarjeta de Estrategias de Social Media -->
+            <a href="estrategias-social-media.html" class="service-card animate-on-scroll fade-in-up">
+                <i class="fas fa-share-alt service-icon"></i>
+                <h3>Estrategias de Social Media</h3>
+                <p> Conectamos tu marca con tu audiencia. Desarrollamos y gestionamos tus redes sociales para
+                    aumentar el engagement, construir comunidad y convertir seguidores en clientes fieles.</p>
+            </a>
+            
+            <!-- Tarjeta de Desarrollo Web Personalizado -->
+            <a href="desarrollo-web.html" class="service-card animate-on-scroll fade-in-up delay-1">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h3>Desarrollo Web Personalizado</h3>
+                <p>Creamos la base de tu presencia online. Diseñamos y programamos sitios web atractivos,
+                    funcionales y optimizados que reflejan la identidad de tu marca y ofrecen una experiencia de
+                    usuario excepcional.</p>
+            </a>
+            
+            <!-- Tarjeta de E-commerce y Tiendas Online -->
+            <a href="ecommerce-tiendas-online.html" class="service-card animate-on-scroll fade-in-up delay-2">
+                <i class="fas fa-shopping-cart service-icon"></i>
+                <h3>E-commerce y Tiendas Online</h3>
+                <p>
+                    Potencia tus ventas en el mundo digital. Construimos plataformas de comercio electrónico
+                    robustas y seguras, diseñadas para un crecimiento escalable y una gestión sencilla de tus
+                    productos.</p>
+            </a>
+            
+            <!-- Tarjeta de Branding e Identidad Visual -->
+            <a href="branding-identidad-visual.html" class="service-card animate-on-scroll fade-in-up delay-3">
+                <i class="fas fa-gem service-icon"></i>
+                <h3>Branding e Identidad Visual</h3>
+                <p>Creamos una marca inolvidable. Desde el diseño de tu logotipo hasta la paleta de colores y la
+                    tipografía, construimos una identidad visual coherente y profesional que te diferencia de la
+                    competencia.</p>
+            </a>
+            
+            <!-- Tarjeta de Diseño Gráfico & Video -->
+            <a href="diseno-grafico-video.html" class="service-card animate-on-scroll fade-in-up delay-4">
+                <i class="fas fa-paint-brush service-icon"></i>
+                <h3>Diseño Gráfico & Video</h3>
+                <p>Da vida a tus ideas con impacto visual y movimiento. Creamos piezas gráficas cautivadoras
+                    para redes sociales, banners y materiales corporativos, y editamos videos dinámicos que
+                    comunican tu mensaje de forma efectiva y profesional.</p>
+            </a>
+            
+            <!-- Tarjeta de Productos Personalizados Impresos -->
+            <a href="productos-impresos.html" class="service-card animate-on-scroll fade-in-up delay-5">
+                <i class="fas fa-tshirt service-icon"></i>
+                <h3>Productos Personalizados Impresos</h3>
+                <p>Materializa la imagen de tu marca. Ofrecemos impresión fotográfica en retablos, estampados en
+                    tazas y prendas en DTF y sublimación para dejar una impresión duradera y
+                    única.</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+        <!-- Nueva Sección: Clientes -->
+        <section id="clients" class="clients-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll fade-in-up">Nuestros Clientes</h2>
+                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Orgullosos de haber colaborado con
+                    grandes marcas y emprendimientos.</p>
+            </div>
+
+            <div class="logo-carousel-container animate-on-scroll fade-in">
+                <div class="logo-carousel">
+                    <img src="IMG/durdan.png" alt="Logo Cliente 1">
+                    <img src="IMG/fotosport.png" alt="Logo Cliente 2">
+                    <img src="IMG/fundacion.png" alt="Logo Cliente 3">
+                    <img src="IMG/jenesano.png" alt="Logo Cliente 4">
+                    <img src="IMG/macanal.png" alt="Logo Cliente 5">
+                    <img src="IMG/sa.png" alt="Logo Cliente 6">
+                    <img src="IMG/San-Francisco.png" alt="Logo Cliente 7">
+                    <img src="IMG/durdan.png" alt="Logo Cliente 1">
+                    <img src="IMG/fotosport.png" alt="Logo Cliente 2">
+                    <img src="IMG/fundacion.png" alt="Logo Cliente 3">
+                    <img src="IMG/jenesano.png" alt="Logo Cliente 4">
+                    <img src="IMG/macanal.png" alt="Logo Cliente 5">
+                    <img src="IMG/sa.png" alt="Logo Cliente 6">
+                    <img src="IMG/San-Francisco.png" alt="Logo Cliente 7">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección Quiénes Somos (Detalles de la Empresa) -->
+        <section id="about" class="about-section section-padding">
+            <div class="container about-content">
+                <div class="about-image animate-on-scroll fade-in-left">
+                    <img src="IMG/foto dirco.png" alt="Equipo DIRCOTCT">
+                </div>
+                <div class="about-text animate-on-scroll fade-in-right">
+                    <h2 class="section-title">Quiénes Somos</h2>
+                    <p>En DIRCO, somos más que una agencia; somos tu socio estratégico en la era digital. Nacimos de la
+                        pasión por transformar ideas en realidades impactantes y de la convicción de que cada marca
+                        merece una presencia que no solo se vea, sino que se sienta.
+                        Nuestro equipo de expertos está especializado en la creación de soluciones digitales integrales.
+                        Desde el desarrollo de sitios web y e-commerce que impulsan tu crecimiento, hasta la gestión
+                        estratégica de redes sociales y la edición de video que conecta con tu audiencia.
+                        Nos enorgullece ir un paso más allá, uniendo el mundo digital y físico a través de nuestro
+                        servicio de diseño gráfico y productos personalizados impresos. Con cada proyecto, nuestra
+                        misión es empoderar a tu negocio para que destaque, crezca y deje una impresión duradera en cada
+                        rincón.</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <b>Enfoque 360° en tu Marca.</b> Desarrollamos una
+                            estrategia integral que cubre desde tu presencia digital hasta productos físicos.</li>
+                        <li><i class="fas fa-check-circle"></i> <b>Resultados Medibles y Tangibles.</b> Nos enfocamos en
+                            el
+                            crecimiento real de tu negocio, con objetivos claros y un impacto visible.</li>
+                        <li><i class="fas fa-check-circle"></i> <b>Creatividad y Estrategia.</b> Combinamos diseños
+                            innovadores y edición de video con una planificación inteligente para conectar con tu
+                            audiencia.</li>
+                        <li><i class="fas fa-check-circle"></i> <b>Acompañamiento Personalizado.</b> Estamos contigo en
+                            cada paso, ofreciendo un soporte cercano y adaptado a tus necesidades únicas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Testimonios -->
+        <section id="testimonials" class="testimonials-section section-padding">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll fade-in-up">Lo que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Reseñas verificadas de Google.</p>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card animate-on-scroll fade-in-up">
+                        <p class="quote">"Quiero expresar mi más sincero agradecimiento a DIRCO por su excepcional
+                            trabajo en el desarrollo de mi landing page... he experimentado un notable aumento en la
+                            visibilidad online y una conversión de ventas que ha crecido de manera significativa."</p>
+                        <p class="author">- Diana Patricia Camargo</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll fade-in-up delay-1">
+                        <p class="quote">"Queremos expresar nuestra más sincera gratitud por el excelente trabajo que
+                            han realizado al diseñar y desarrollar la página web para nuestra Fundación... Su eficiencia
+                            y dedicación han sido fundamentales para que ahora tengamos una mayor presencia en línea."
+                        </p>
+                        <p class="author">- Publicidad Fundación Integrar Jenesano</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll fade-in-up delay-2">
+                        <p class="quote">¡El servicio de estampado en tazas y prendas es increíble! La calidad del
+                            diseño y los detalles superaron todas mis expectativas. Un trabajo perfecto y super
+                            recomendado.</p>
+                        <p class="author">- Kattalina Grau</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contact" class="contact-section section-padding">
+            <div class="container contact-content">
+                <div class="contact-info animate-on-scroll fade-in-left">
+                    <h2 class="section-title">Contáctanos</h2>
+                    <p>Estamos listos para ayudarte a llevar tu negocio al siguiente nivel. Ponte en contacto con
+                        nosotros para una consulta gratuita.</p>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Cra. 17 B #7a 93, Tunja, Boyacá</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+57 320 264 1496</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>dirco.tct@gmail.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/Dirco.tct/" aria-label="Facebook" target="_blank"
+                            rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/dirco.tct/" aria-label="Instagram" target="_blank"
+                            rel="noopener"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@dirco.tct?lang=es" aria-label="TikTok" target="_blank"
+                            rel="noopener"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <!-- Sección de Contacto -->
+                <div class="contact-form-container animate-on-scroll fade-in-right">
+                    <!-- La URL de Formspree se ha actualizado aquí -->
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xgvznjkg" method="POST">
+                        <input type="text" id="contactName" name="name" placeholder="Tu Nombre" required>
+                        <input type="email" id="contactEmail" name="email" placeholder="Tu Correo Electrónico" required>
+                        <input type="text" id="contactSubject" name="subject" placeholder="Asunto">
+                        <textarea id="contactMessage" name="message" placeholder="Tu Mensaje" rows="5" required></textarea>
+                        <button type="submit" id="submitContactForm" class="btn btn-primary">Enviar Mensaje</button>
+                        <div id="formMessage" class="form-message"></div> <!-- Mensaje de confirmación -->
+                    </form>
+                </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <b>“Pon en manos del Señor todas tus obras, y tus proyectos se cumplirán.”</b> Proverbios 16:3</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

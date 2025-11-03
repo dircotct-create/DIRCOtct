@@ -1,0 +1,145 @@
+/*
+ * Archivo CSS para la página de Estrategias de Social Media
+ * Puedes usar este archivo para estilos específicos de esta página
+ */
+
+/* Sección de detalle del servicio */
+.service-detail-section {
+    background-color: #f0f4f8; /* Un gris claro para un fondo suave */
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.service-title {
+    font-size: 3rem;
+    color: #00004D;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.service-subtitle {
+    font-size: 1.5rem;
+    color: #667;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.service-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-content .text-block {
+    flex: 1;
+    min-width: 300px;
+}
+
+.service-content .image-block {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+}
+
+.responsive-image:hover {
+    transform: scale(1.03);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.features-list li {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #444;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.features-list li i {
+    color: #5d5dff; /* Un azul vibrante */
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+.call-to-action-card {
+    background: linear-gradient(45deg, #00004D, #5d5dff); /* Gradiente llamativo */
+    color: white;
+    text-align: center;
+    padding: 3rem;
+    margin-top: 5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: rotateZ(-2deg); /* Un pequeño giro para que destaque */
+    transition: transform 0.5s ease-in-out;
+}
+
+.call-to-action-card:hover {
+    transform: rotateZ(0deg); /* Se endereza al pasar el cursor */
+}
+
+.call-to-action-card p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.call-to-action-card .btn-primary {
+    background-color: white;
+    color: #00004D;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.call-to-action-card .btn-primary:hover {
+    background-color: #f0f4f8;
+    color: #5d5dff;
+    transform: scale(1.05);
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    .service-detail-section {
+        padding: 2rem 1rem;
+    }
+    .service-title {
+        font-size: 2rem;
+    }
+    .service-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .service-content {
+        flex-direction: column;
+    }
+    .call-to-action-card {
+        padding: 2rem;
+        transform: none; /* Eliminar el giro en móviles */
+    }
+    .call-to-action-card p {
+        font-size: 1.2rem;
+    }
+    .call-to-action-card .btn-primary {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}
