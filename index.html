@@ -7,10 +7,16 @@
     <title>DIRCOTCT - Soluciones Integrales</title>
     <link rel="icon" type="image/x-icon" href="/IMG/icono.png">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="premium-effects.css">
     <!-- Google Fonts: Inter para tipografía legible -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/darkroomengineering/lenis@latest/bundled/lenis.js"></script>
 </head>
 
 <body>
@@ -47,13 +53,13 @@
         <!-- Sección Hero (Cobertura Inicial) -->
         <section id="hero" class="hero-section">
             <div class="container hero-content">
-                <div class="hero-text animate-on-scroll fade-in-up">
-                    <h1>Impulsa tu Negocio al Siguiente Nivel</h1>
+            <div class="hero-text animate-on-scroll fade-in-up reveal-left">
+                    <h1 class="gradient-title">Impulsa tu Negocio al Siguiente Nivel</h1>
                     <p>En DIRCO, somos tu aliado en la revolución digital. Especialistas en creación de sitios web,
                         gestión de redes sociales, landing pages y tiendas online. Desde un logotipo memorable hasta una
                         estrategia de SEO completa, te ayudamos a destacar y crecer. ¡Únete a nosotros y juntos, creemos
                         algo extraordinario!</p>
-                    <a href="#services" class="btn btn-primary scroll-to-section">Descubre Nuestros Servicios</a>
+                    <a href="#services" class="btn btn-primary btn-premium scroll-to-section">Descubre Nuestros Servicios</a>
                 </div>
                 <div class="hero-lottie animate-on-scroll fade-in-up delay-1">
                     <!-- Lottie Player para el cohete -->
@@ -69,13 +75,13 @@
         <!-- Sección de Servicios -->
        <section id="services" class="services-section section-padding">
     <div class="container">
-        <h2 class="section-title animate-on-scroll fade-in-up">Nuestros Servicios</h2>
-        <p class="section-subtitle animate-on-scroll fade-in-up delay-1">Queremos ser tu aliado en el ámbito del
+        <h2 class="section-title animate-on-scroll fade-in-up reveal">Nuestros Servicios</h2>
+        <p class="section-subtitle animate-on-scroll fade-in-up delay-1 reveal">Queremos ser tu aliado en el ámbito del
             marketing digital.</p>
         <div class="services-grid">
             
             <!-- Tarjeta de Estrategias de Social Media -->
-            <a href="estrategias-social-media.html" class="service-card animate-on-scroll fade-in-up">
+            <a href="estrategias-social-media.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal">
                 <i class="fas fa-share-alt service-icon"></i>
                 <h3>Estrategias de Social Media</h3>
                 <p> Conectamos tu marca con tu audiencia. Desarrollamos y gestionamos tus redes sociales para
@@ -83,7 +89,7 @@
             </a>
             
             <!-- Tarjeta de Desarrollo Web Personalizado -->
-            <a href="desarrollo-web.html" class="service-card animate-on-scroll fade-in-up delay-1">
+            <a href="desarrollo-web.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal delay-1">
                 <i class="fas fa-laptop-code service-icon"></i>
                 <h3>Desarrollo Web Personalizado</h3>
                 <p>Creamos la base de tu presencia online. Diseñamos y programamos sitios web atractivos,
@@ -92,7 +98,7 @@
             </a>
             
             <!-- Tarjeta de E-commerce y Tiendas Online -->
-            <a href="ecommerce-tiendas-online.html" class="service-card animate-on-scroll fade-in-up delay-2">
+            <a href="ecommerce-tiendas-online.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal delay-2">
                 <i class="fas fa-shopping-cart service-icon"></i>
                 <h3>E-commerce y Tiendas Online</h3>
                 <p>
@@ -102,7 +108,7 @@
             </a>
             
             <!-- Tarjeta de Branding e Identidad Visual -->
-            <a href="branding-identidad-visual.html" class="service-card animate-on-scroll fade-in-up delay-3">
+            <a href="branding-identidad-visual.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal delay-3">
                 <i class="fas fa-gem service-icon"></i>
                 <h3>Branding e Identidad Visual</h3>
                 <p>Creamos una marca inolvidable. Desde el diseño de tu logotipo hasta la paleta de colores y la
@@ -111,7 +117,7 @@
             </a>
             
             <!-- Tarjeta de Diseño Gráfico & Video -->
-            <a href="diseno-grafico-video.html" class="service-card animate-on-scroll fade-in-up delay-4">
+            <a href="diseno-grafico-video.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal delay-4">
                 <i class="fas fa-paint-brush service-icon"></i>
                 <h3>Diseño Gráfico & Video</h3>
                 <p>Da vida a tus ideas con impacto visual y movimiento. Creamos piezas gráficas cautivadoras
@@ -120,7 +126,7 @@
             </a>
             
             <!-- Tarjeta de Productos Personalizados Impresos -->
-            <a href="productos-impresos.html" class="service-card animate-on-scroll fade-in-up delay-5">
+            <a href="productos-impresos.html" class="service-card animate-on-scroll fade-in-up stagger-item reveal delay-5">
                 <i class="fas fa-tshirt service-icon"></i>
                 <h3>Productos Personalizados Impresos</h3>
                 <p>Materializa la imagen de tu marca. Ofrecemos impresión fotográfica en retablos, estampados en
@@ -273,6 +279,7 @@
         </div>
     </footer>
 
+    <script src="gsap-setup.js"></script>
     <script src="main.js"></script>
 </body>
 
